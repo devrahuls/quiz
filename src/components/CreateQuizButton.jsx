@@ -19,7 +19,7 @@ const CreateQuizButton = () => {
     <button onClick={handleQuizButton}>Create</button>
     {active && <CreateQuiz quizActive = {active} setQuizActive = {setActive} handleContinue={handleContinue}/>}
     <div>
-    {showQuizType && <QuizBuilder/>}
+    {showQuizType && <QuizBuilder propsActiveQuizType = {showQuizType} propsSetActiveQuizType = {setShowQuizType}/>}
     {/* {showQuizType && <CreateQuizType propsActiveQuizType = {showQuizType} propsSetActiveQuizType = {setShowQuizType}/>} */}
     </div>
     </div>

@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import CreateQuizType from './CreateQuizType'; // Assuming CreateQuizType is a separate component
 
-const QuizBuilder = () => {
+const QuizBuilder = ({ propsActiveQuizType, propsSetActiveQuizType}) => {
     const [activeQuizTypes, setActiveQuizTypes] = useState([{ active: true }]);
+
+    const handleCancel = () => {
+        propsSetActiveQuizType(!propsActiveQuizType)
+    }
+    const handleCreate = () => {
+        propsSetActiveQuizType(!propsActiveQuizType)
+    }
 
     const handleAddQuizType = () => {
         if (activeQuizTypes.length < 5) {
@@ -49,7 +56,8 @@ const QuizBuilder = () => {
                     </div>
                 ))}
             </div>
-
+            <button onClick={handleCancel}>Cancel</button>
+            <button onClick={handleCreate}>Create Quiz</button>
         </div>
     );
 };

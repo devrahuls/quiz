@@ -1,18 +1,13 @@
 import React from 'react'
 import Timer from './Timer'
 
-const CreateQuizType = ({ propsActiveQuizType, propsSetActiveQuizType}) => {
+const CreateQuizType = () => {
     const [quizQuestion, setQuizQuestion] = React.useState('')
     const [selectQuizOption, setSelectQuizOption] = React.useState('')
     const [selectAnsOption, setSelectAnsOption] = React.useState('')
     const [options, setOptions] = React.useState(['Text1', 'Text2']); // Initial options
 
-    const handleCancel = () => {
-        propsSetActiveQuizType(!propsActiveQuizType)
-    }
-    const handleCreate = () => {
-        propsSetActiveQuizType(!propsActiveQuizType)
-    }
+
 
     let quizType = 'Q&A'
     const handleInputChange = (event) => {
@@ -122,8 +117,7 @@ const CreateQuizType = ({ propsActiveQuizType, propsSetActiveQuizType}) => {
 
             {quizType === 'Q&A' && <Timer />}
 
-            <button onClick={handleCancel}>Cancel</button>
-            <button onClick={handleCreate}>Create Quiz</button>
+            
         </div>
     )
 }
