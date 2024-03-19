@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import CreateQuizType from './CreateQuizType'; // Assuming CreateQuizType is a separate component
 
-const QuizBuilder = ({ propsActiveQuizType, propsSetActiveQuizType}) => {
+const QuizBuilder = ({ propsActiveQuizType, propsSetActiveQuizType, showQuizPublish, setShowQuizPublish}) => {
     const [activeQuizTypes, setActiveQuizTypes] = useState([{ active: true }]);
 
     const handleCancel = () => {
         propsSetActiveQuizType(!propsActiveQuizType)
     }
     const handleCreate = () => {
+        setShowQuizPublish(!showQuizPublish)
         propsSetActiveQuizType(!propsActiveQuizType)
     }
 

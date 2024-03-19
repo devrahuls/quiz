@@ -1,15 +1,14 @@
 import React from 'react'
 import Timer from './Timer'
 
-const CreateQuizType = () => {
+const CreateQuizType = ({quizType}) => {
     const [quizQuestion, setQuizQuestion] = React.useState('')
     const [selectQuizOption, setSelectQuizOption] = React.useState('')
     const [selectAnsOption, setSelectAnsOption] = React.useState('')
     const [options, setOptions] = React.useState(['Text1', 'Text2']); // Initial options
 
+    // quizType = 'Q&A';
 
-
-    let quizType = 'Q&A'
     const handleInputChange = (event) => {
         setSelectQuizOption(event.target.value);
         console.log("Selected value:", event.target.value);
@@ -116,8 +115,6 @@ const CreateQuizType = () => {
             </div>
 
             {quizType === 'Q&A' && <Timer />}
-
-            
         </div>
     )
 }

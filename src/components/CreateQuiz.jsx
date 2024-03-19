@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import './QuizType.css';
+import CreateQuizType from './CreateQuizType';
 
 
 
 const CreateQuiz = ({quizActive, setQuizActive, handleContinue}) => {
     const [quizName, setQuizName] = useState('');
-    const [quizType, setQuizType] = useState('');
+    const [quizType, setQuizType] = useState('Q&A');
 
     const handleCreateQuiz = () => {
         if (quizName && quizType) {
-            //do something
             setQuizActive(!quizActive)
             handleContinue()
         } else {
@@ -55,6 +55,7 @@ const CreateQuiz = ({quizActive, setQuizActive, handleContinue}) => {
                     <button onClick={handleCreateQuiz}>Continue</button>
                 </div>
             </div>
+            {false && <CreateQuizType quizType={quizType} />}
         </>
     );
 };
