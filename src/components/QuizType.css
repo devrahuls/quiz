@@ -1,0 +1,21 @@
+/* label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  label.active {
+    background-color: #007bff;
+    color: #fff;
+  } */
