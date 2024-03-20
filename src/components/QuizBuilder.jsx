@@ -49,6 +49,7 @@ const QuizBuilder = ({ propsActiveQuizType, propsSetActiveQuizType, showQuizPubl
 
                         {quizType.active && (
                             <CreateQuizType
+                                keyValue={index}
                                 propsActiveQuizType={quizType.active}
                                 propsSetActiveQuizType={handleSetActiveQuizType.bind(null, index)} // Bind index to handleSetActiveQuizType for correct context
                             />
