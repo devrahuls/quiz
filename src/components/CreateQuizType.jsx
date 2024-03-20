@@ -1,7 +1,8 @@
 import React from 'react'
 import Timer from './Timer'
 
-const CreateQuizType = ({quizType}) => {
+// const CreateQuizType = ({quizType}) => {
+const CreateQuizType = ({keyValue}) => { // quizType baad me le lena jo bhi component structure h uske according
     const [quizQuestion, setQuizQuestion] = React.useState('')
     const [selectQuizOption, setSelectQuizOption] = React.useState('')
     const [selectAnsOption, setSelectAnsOption] = React.useState('')
@@ -59,17 +60,20 @@ const CreateQuizType = ({quizType}) => {
             <div>
                 <span>Option Type: </span>
                 <label>
-                    <input type="radio" value="Text" name="quizOption"
+{/*                     <input type="radio" value="Text" name="quizOption" */}
+                    <input type="radio" value="Text" name=`quizOption-${keyValue}`
                         checked={selectQuizOption === 'Text'} onChange={handleInputChange}
                     /> Text
                 </label>
                 <label>
-                    <input type="radio" value="ImageURL" name="quizOption"
+{/*                     <input type="radio" value="ImageURL" name="quizOption" */}
+                    <input type="radio" value="ImageURL" name=`quizOption-${keyValue}`
                         checked={selectQuizOption === 'ImageURL'} onChange={handleInputChange}
                     /> Image URL
                 </label>
                 <label>
-                    <input type="radio" value="Text&ImageURL" name="quizOption"
+{/*                     <input type="radio" value="Text&ImageURL" name="quizOption" */}
+                    <input type="radio" value="Text&ImageURL" name=`quizOption-${keyValue}`
                         checked={selectQuizOption === 'Text&ImageURL'} onChange={handleInputChange}
                     /> Text & Image URL
                 </label>
@@ -79,7 +83,7 @@ const CreateQuizType = ({quizType}) => {
                 {quizType === 'Q&A' && selectQuizOption === 'Text' && (
                     <div>
                         {/* <label>
-                            <input type="radio" value="option1" name="option"
+                            <input type="radio" value="option1" name=`option"
                                 checked={selectAnsOption === 'option1'} onChange={handleAnsOptionChange}
                             /> <input type='text' onClick={() => handleTextInputClick('option1')} />
                         </label>
@@ -95,7 +99,7 @@ const CreateQuizType = ({quizType}) => {
                                 <input
                                     type="radio"
                                     value={option}
-                                    name="option"
+                                    name=`option-${keyValue}`
                                     checked={selectAnsOption === option}
                                     onChange={handleOptionChange} onClick={() => handleTextInputClick(option)}
                                 />
