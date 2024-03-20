@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import CreateQuizType from './CreateQuizType'; // Assuming CreateQuizType is a separate component
 
-const QuizBuilder = ({ propsActiveQuizType, propsSetActiveQuizType, showQuizPublish, setShowQuizPublish }) => {
+const QuizBuilder = ({ propsActiveQuizType, propsSetActiveQuizType, showQuizPublish, setShowQuizPublish, quizTypee}) => {
     const [activeQuizTypes, setActiveQuizTypes] = useState([{ active: true }]);
-    const [quizTypee, setQuizType] = useState('Q&A')
+    // const [quizTypee, setQuizType] = useState('Poll')
 
     const handleCancel = () => {
         propsSetActiveQuizType(!propsActiveQuizType)
@@ -64,7 +64,7 @@ const QuizBuilder = ({ propsActiveQuizType, propsSetActiveQuizType, showQuizPubl
 
                         {quizType.active && (
                             <CreateQuizType
-                                keyValue={index}
+                                // keyValue={index}
                                 // propsActiveQuizType={quizType.active}
                                 // propsSetActiveQuizType={handleSetActiveQuizType.bind(null, index)} // Bind index to handleSetActiveQuizType for correct context
                                 // quizType={quizType.active ? 'Q&A' : 'Poll'}

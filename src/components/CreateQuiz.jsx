@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 // import CreateQuizType from './CreateQuizType';
 
-
-
-const CreateQuiz = ({ quizActive, setQuizActive, handleContinue }) => {
+const CreateQuiz = ({ quizActive, setQuizActive, handleContinue, onQuizTypeChange  }) => {
     const [quizName, setQuizName] = useState('');
-    const [quizType, setQuizType] = useState('');
+    // const [quizType, setQuizType] = useState('');
     const [selectedQuizType, setSelectedQuizType] = useState(''); //to handle radio button selection and style it accordingly
 
     const handleCreateQuiz = () => {
-        if (quizName && quizType) {
+        if (quizName && selectedQuizType) {
+            onQuizTypeChange(selectedQuizType);
             setQuizActive(!quizActive)
             handleContinue()
         } else {
             alert('Please enter quiz name and select quiz type.');
         }
     };
-    console.log(quizType);
+    // console.log(quizType);
     const handleCancel = () => {
         setQuizActive(!quizActive)
     };
@@ -30,11 +29,11 @@ const CreateQuiz = ({ quizActive, setQuizActive, handleContinue }) => {
                     <p className="text-gray-700">Quiz type:</p>
                     <div className="flex gap-4">
                         <label className={`flex items-center cursor-pointer rounded-md shadow border border-gray-100 p-1 px-4 ${selectedQuizType === 'Q&A' ? 'bg-[#60b94a] text-white' : ''}`}>
-                            <input type="radio" value="Q&A" checked={quizType === 'Q&A'} onChange={() => { setQuizType('Q&A'); setSelectedQuizType('Q&A'); }} className="hidden" />
+                            <input type="radio" value="Q&A" checked={selectedQuizType  === 'Q&A'} onChange={() => { setSelectedQuizType('Q&A'); }} className="hidden" />
                             Q&A
                         </label>
                         <label className={`flex items-center cursor-pointer rounded-md shadow border border-gray-100 p-1 px-4 ${selectedQuizType === 'Poll' ? 'bg-[#60b94a] text-white' : ''}`}>
-                            <input type="radio" value="Poll" checked={quizType === 'Poll'} onChange={() => { setQuizType('Poll'); setSelectedQuizType('Poll'); }} className="hidden" />
+                            <input type="radio" value="Poll" checked={selectedQuizType  === 'Poll'} onChange={() => { setSelectedQuizType('Poll'); }} className="hidden" />
                             Poll
                         </label>
                     </div>
@@ -48,7 +47,7 @@ const CreateQuiz = ({ quizActive, setQuizActive, handleContinue }) => {
                 </div>
             </div>
 
-            {false && <CreateQuizType quizType={quizType} />}
+            {/* {false && <CreateQuizType quizType={quizType} />} */}
         </>
     );
 };

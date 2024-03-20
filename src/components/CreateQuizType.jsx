@@ -8,7 +8,7 @@ const CreateQuizType = ({ quizType }) => {
     const [options, setOptions] = React.useState(['Text1', 'Text2']); // Initial options
 
 
-    // quizType = 'Poll';
+    // let quizType = 'Poll';
 
     const handleInputChange = (event) => {
         setSelectQuizOption(event.target.value);
